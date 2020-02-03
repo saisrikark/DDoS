@@ -1,0 +1,12 @@
+# How to add in this
+# For optional parameter , give -- in front of their name
+# Format - as a dictionary, key:value
+
+--a:
+  name: Martin D'vloper
+  help: put text here
+  age: 11
+--b:
+  name: Martin D'vloper
+  help: put text here
+  age: 11

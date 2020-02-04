@@ -21,16 +21,14 @@ class base_attack_class():
         }
         protocol = self.script_args["protocol"]
         required_base_packet = packet_dict[protocol]
-        #required_base_packet.src = "1.1.1.1"
-        #required_base_packet.dest = "127.0.0.1"
         self.packets.append(required_base_packet)
+        #self.packets[0].dest = "127.0.0.1"
+        #send(self.packets[0])
 
     def add_base_packet_parameters(self):
         # Whatever base parameters are required, will go here
-        """for index in len(self.packets):
-            self.packets[index].src = "1.1.1.1"
-            self.packets[index].dest = "127.0.0.1"
-        """
+        # And will be added to the packets list
+        pass
 
 def create_ddos_attack_object(script_args):
     base_attack_object = base_attack_class(script_args)

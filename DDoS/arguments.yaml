@@ -1,12 +1,10 @@
 # How to add in this
-# For optional parameter , give -- in front of their name
 # Format - as a dictionary, key:value
+# Add the next number, then name of the parameter, then value
 
---a:
-  name: Martin D'vloper
-  help: put text here
-  age: 11
---b:
-  name: Martin D'vloper
-  help: put text here
-  age: 11
+1:
+  name: abcd
+  value: 1
+2:
+  name: protocol
+  value: TCP

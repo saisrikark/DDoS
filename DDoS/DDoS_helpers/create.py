@@ -47,9 +47,7 @@ class base_attack_class():
                 self.packets[0][UDP].sport = value
 
 def create_ddos_attack_object(script_args):
-    print(script_args)
     base_attack_object = base_attack_class(script_args)
     base_attack_object.construct_empty_packets()
     base_attack_object.add_base_packet_parameters()
-    send(base_attack_object.packets[0], count=100)
     return base_attack_object

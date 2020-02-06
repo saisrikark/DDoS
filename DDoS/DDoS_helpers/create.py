@@ -15,7 +15,7 @@ class base_attack_class():
     def construct_empty_packets(self):
         packet_dict = {
             "IP" : IP(),
-            "TCP" : IP()/TCP(),
+            "TCP" : Ether()/IP()/TCP(),
             "UDP" : IP()/UDP(),
             "ICMP" : IP()/ICMP()
         }

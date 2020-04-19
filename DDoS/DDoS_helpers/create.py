@@ -13,17 +13,18 @@ class base_attack_class():
         self.script_args = script_args
         
     def construct_empty_packets(self):
+        src_ip = self.script_args["src"]
+        dest_ip = self.script_args["dest"]
+        print(src_ip, dest_ip)
         packet_dict = {
-            "IP" : IP(),
-            "TCP" : Ether()/IP()/TCP(),
-            "UDP" : IP()/UDP(),
-            "ICMP" : IP()/ICMP()
+            "IP" : IP(src=src_ip,dst=dest_ip),
+            "TCP" : IP(src=src_ip,dst=dest_ip)/TCP(),
+            "UDP" : IP(src=src_ip,dst=dest_ip)/UDP(),
+            "ICMP" : IP(src=src_ip,dst=dest_ip)/ICMP()
         }
         protocol = self.script_args["protocol"]
         required_base_packet = packet_dict[protocol]
         self.packets.append(required_base_packet)
-        #self.packets[0].dest = "127.0.0.1"
-        #send(self.packets[0])
 
     def add_base_packet_parameters(self):
         # Whatever base parameters are required, will go here
@@ -33,11 +34,7 @@ class base_attack_class():
         for name in self.script_args.keys():
             value = self.script_args[name]
             print(name, value)
-            if(name == "src"):
-                self.packets[0][IP].src = value
-            elif(name == "dest"):
-                self.packets[0][IP].dest = value
-            elif(name == "dport" and protocol == "TCP"):
+            if(name == "dport" and protocol == "TCP"):
                 self.packets[0][TCP].dport = value
             elif(name == "dport" and protocol == "UDP"):
                 self.packets[0][UDP].dport = value

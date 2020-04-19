@@ -35,6 +35,6 @@ def spoof_ip_address(ddos_attack_object):
       ddos_attack_object.packets[index][IP].src = generate_spoofed_ip_address()
 
 def modify_ddos_attack_object(ddos_attack_object, script_args):
-   spoof_mac_address(ddos_attack_object)
-   spoof_ip_address(ddos_attack_object)
+   #spoof_mac_address(ddos_attack_object)
+   #spoof_ip_address(ddos_attack_object)
    return ddos_attack_object
